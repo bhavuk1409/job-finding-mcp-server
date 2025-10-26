@@ -4,12 +4,12 @@ A Model Context Protocol (MCP) server providing comprehensive job and internship
 
 ## Features
 
-- ✅ **Universal job search** - All industries and job types
-- ✅ **Internship search** - Dedicated internship finder
-- ✅ **Company-specific search** - Jobs at specific companies (enhanced filtering)
-- ✅ **Remote opportunities** - Filter for remote positions
-- ✅ **Category browsing** - Industry-wise job categories
-- ✅ **Global coverage** - Search by country/location
+- **Universal job search** - All industries and job types
+- **Internship search** - Dedicated internship finder
+- **Company-specific search** - Jobs at specific companies (enhanced filtering)
+- **Remote opportunities** - Filter for remote positions
+- **Category browsing** - Industry-wise job categories
+- **Global coverage** - Search by country/location
 
 ## Quick Start
 
@@ -85,10 +85,10 @@ get_job_categories("in")
 
 ## Recent Improvements
 
-- ✅ **Fixed company search**: Enhanced filtering for accurate company-specific results
-- ✅ **Better matching**: Improved company name matching logic
-- ✅ **Cleaner code**: Removed debug elements, added professional documentation
-- ✅ **GitHub ready**: Clean codebase with proper error handling
+- **Fixed company search**: Enhanced filtering for accurate company-specific results
+- **Better matching**: Improved company name matching logic
+- **Cleaner code**: Removed debug elements, added professional documentation
+- **GitHub ready**: Clean codebase with proper error handling
 
 ## Project Structure
 ```

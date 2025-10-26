@@ -63,10 +63,8 @@ uv run fastmcp dev app.py
 
 # Example searches:
 search_jobs("Software Engineer", "Bangalore", "in", 1, 20)
-search_internships("Data Science", "India", "in", 1, 20)
 search_company_jobs("Google", "", "India", "in", 1, 20)
 search_remote_jobs("Python Developer", "in", 1, 20)
-get_job_categories("in")
 ```
 
 ## Integration with Claude Desktop
@@ -75,9 +73,9 @@ get_job_categories("in")
 {
   "mcpServers": {
     "jobs-platform": {
-      "command": "python",
-      "args": ["/path/to/ai-internships-mcp-server/app.py"],
-      "cwd": "/path/to/ai-internships-mcp-server"
+      "command": "python3",
+      "args": ["actual_path"],
+      "cwd": "/path/to/mcp-server"
     }
   }
 }

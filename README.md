@@ -8,8 +8,6 @@ A Model Context Protocol (MCP) server providing comprehensive job and internship
 - **Internship search** - Dedicated internship finder
 - **Company-specific search** - Jobs at specific companies (enhanced filtering)
 - **Remote opportunities** - Filter for remote positions
-- **Category browsing** - Industry-wise job categories
-- **Global coverage** - Search by country/location
 
 ## Quick Start
 

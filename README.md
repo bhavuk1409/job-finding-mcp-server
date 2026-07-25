@@ -1,69 +1,94 @@
-# Jobs and Internships MCP Server
+# Jobs & Internships MCP Server
 
-A Model Context Protocol (MCP) server providing comprehensive job and internship search capabilities using the Adzuna Jobs API.
+A **Model Context Protocol (MCP) server** for searching jobs and internships
+through the **Adzuna Jobs API** — universal job search, dedicated internship
+search, company-specific filtering, and remote-only results, all callable as
+MCP tools from any compatible client.
 
-## Features
+![python](https://img.shields.io/badge/python-3.x-3776ab) ![framework](https://img.shields.io/badge/framework-FastMCP-6e56cf) ![api](https://img.shields.io/badge/data-Adzuna%20Jobs%20API-ff6f00) ![license](https://img.shields.io/badge/license-MIT-green)
 
-- **Universal job search** - All industries and job types
-- **Internship search** - Dedicated internship finder
-- **Company-specific search** - Jobs at specific companies (enhanced filtering)
-- **Remote opportunities** - Filter for remote positions
+---
 
-## Quick Start
+## What it does
+
+- **Universal job search** — query across all industries and job types.
+- **Internship search** — a dedicated finder for internship listings.
+- **Company-specific search** — enhanced filtering for jobs at a named
+  company, with improved company-name matching.
+- **Remote opportunities** — filter results down to remote-only positions.
+- **Category browsing** — list job categories by industry.
+- **No RapidAPI dependency** — talks directly to Adzuna, with global,
+  country-specific coverage and rich metadata (salary, contract type,
+  category).
+
+---
+
+## Repository layout
+
+```
+├── app.py               # Main MCP server (tools + Adzuna integration)
+├── requirements.txt     # Python dependencies
+├── pyproject.toml       # Project configuration
+├── uv.lock              # Dependency lock file
+├── .env.example         # Environment variable template
+├── .env                 # Your API credentials (gitignored)
+└── README.md            # This file
+```
+
+---
+
+## Quickstart
+
+### 1. Get Adzuna API credentials
+
+- Sign up at [Adzuna Developer](https://developer.adzuna.com/)
+- Create an application to get an **App ID** and **App Key**
+
+### 2. Install & configure
 
 ```bash
-# Clone and setup
-git clone <repository-url>
-cd ai-internships-mcp-server
+git clone https://github.com/bhavuk1409/job-finding-mcp-server.git
+cd job-finding-mcp-server
 
-# Install dependencies
 pip install fastmcp httpx python-dotenv
 
-# Setup environment
 cp .env.example .env
-# Add your Adzuna credentials to .env
+```
 
-# Run the server
+Add your credentials to `.env`:
+
+```
+ADZUNA_APP_ID=your_app_id
+ADZUNA_APP_KEY=your_app_key
+```
+
+### 3. Run
+
+```bash
 uv run fastmcp dev app.py
 ```
 
-## API Integration
+---
 
-- **Adzuna Jobs API** - Primary job aggregation platform
-  - Global coverage with country-specific searches
-  - Rich metadata (salary, contract type, categories)
-  - No RapidAPI dependency required
+## Tools
 
-## Setup Instructions
+| Name | Description |
+| --- | --- |
+| `search_jobs` | Universal job search across all industries |
+| `search_internships` | Dedicated internship search |
+| `search_company_jobs` | Jobs at a specific company, with enhanced filtering |
+| `get_job_categories` | Browse job categories by industry |
+| `search_remote_jobs` | Remote-only job opportunities |
 
-1. **Adzuna API Setup**:
-   - Sign up at [Adzuna Developer](https://developer.adzuna.com/)
-   - Create an application to get App ID and App Key
-   - Add to `.env`:
-     ```
-     ADZUNA_APP_ID=your_app_id
-     ADZUNA_APP_KEY=your_app_key
-     ```
+**Example calls:**
 
-## Available Tools
-
-1. **search_jobs** - Universal job search across all industries
-2. **search_internships** - Dedicated internship opportunities
-3. **search_company_jobs** - Jobs at specific companies (enhanced filtering)
-4. **get_job_categories** - Browse job categories by industry
-5. **search_remote_jobs** - Remote work opportunities
-
-## Usage Examples
-
-```bash
-# Start the server
-uv run fastmcp dev app.py
-
-# Example searches:
+```python
 search_jobs("Software Engineer", "Bangalore", "in", 1, 20)
 search_company_jobs("Google", "", "India", "in", 1, 20)
 search_remote_jobs("Python Developer", "in", 1, 20)
 ```
+
+---
 
 ## Integration with Claude Desktop
 
@@ -79,36 +104,23 @@ search_remote_jobs("Python Developer", "in", 1, 20)
 }
 ```
 
-## Recent Improvements
-
-- **Fixed company search**: Enhanced filtering for accurate company-specific results
-- **Better matching**: Improved company name matching logic
-- **Cleaner code**: Removed debug elements, added professional documentation
-- **GitHub ready**: Clean codebase with proper error handling
-
-## Project Structure
-```
-ai-internships-mcp-server/
-├── app.py              # Main MCP server
-├── requirements.txt    # Python dependencies
-├── .env.example        # Environment variables template
-├── .env               # Your API credentials (gitignored)
-├── .gitignore         # Git ignore rules
-└── README.md          # This documentation
-```
+---
 
 ## Contributing
 
 1. Fork the repository
 2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
+3. Make your changes (add tests if applicable)
+4. Submit a pull request
 
-## License
-
-MIT License
+---
 
 ## Support
 
 For issues and questions, please open a GitHub issue.
+
+---
+
+## License
+
+MIT
